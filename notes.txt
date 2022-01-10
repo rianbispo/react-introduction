@@ -1,0 +1,65 @@
+Passo a passo Instalação react:
+Opção 1: 
+- npx create-react-app my-app
+- npm run 
+Opção 2:
+- mkdir my-app
+- npm init
+- npm install --save react@17.0.2 react-dom@17.0.2 react-scripts@4.0.3
+Obs: Criar as pastas "public" e "src" e adicionar os respectivos arquivos index.html, index.js... E támbem adicicionar os scripts: start, build, test e eject no package.json. 
+(   "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject")
+- yarn start || npm run
+
+JSX:
+- É uma linguagem de marcação para poder utilizar os elementos primitvos do HTML e támebem ter todas as funcionalidades do Javascript.
+- Não é obrigatório o uso do JSX;
+- O browser não interpreta o JSX. Pra isso é usado um transpilador como o babel;
+- Ex: const title = <h1>Hello World</h1>;
+- Para executar qualquer código no JSX é preciso colocar entre chaves {}.
+
+Renderização:
+- Virtual DOM controla tudo o que está no seu DOM.
+- Quando há uma alteração no código ele não irá renderizar toda a aplicação, irá renderizar somente o ponto onde ocorreu a alteração.
+- Com isso temos mais ganho de performace e evita uma série de erros.
+
+Components:
+- Componentes pro React é dividir seu código em pequenas partes. Deixando sua aplicação mais modular.
+- Ele pode trabalhar de duas formas como função ou como classe.
+
+Props:
+- São parâmetros passados para esses Componentes.
+
+Estados e Ciclos de Vida:
+- Inicialização -> Montagem -> Atualização -> Desmontagem;
+- Nenhum componente pai ou filho devem saber se o outro possui estado ou não;
+
+Webpack:
+- Webpack é um moule bundler(um empacotador de módulos para aplicações JS);
+- Ele gera um bundler que será utilizado no HTML, em ES5;
+- Bundler é um arquivo final onde será empacotados todos esses módulos.
+Principais conceitos do Webpack:
+    - Entry: Utilizando grafo, o Webpack precisa de um ponto de entrada para buscar todos os módulos e dependências;
+    - Output: É para determinar quais são os bundlers que o Webpack irá emitir;
+    - Loaders: É para permitir que o Webpack gerencie arquivos que não são Javascript;
+    - Plugins: Podem ser utilizados para otimização de pacotes, minificação, injeção de scripts e muitos mais;
+    - Mode: Utilizados para arbodagem de configuração zero. É possível configurar módlos como production, developement ou none;
+    "Production": trás otimizações internas;
+    "Developement": É executado com três plugins:; UglifyJsplugin, ModuleConcatenationPlugin e NoEmitOnErrorsPlugin
+
+    "build": "webpack --mode production",
+    npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+
+Renderização Condicional:
+- Dependedo do estado da aplicação o React irá renderizar determinados componentes.
+
+Lists e Keys:
+
+- Chaves devem ser únicas apenas em elementos irmãos
+
+Manipular eventos:
+- Manipular eventos em elementos React é muito semelhante a manipular eventos em elementos do DOM;
+- Eventos em React são nomeados usando camelCase ao invés de letras minúsculas;
+- Com o JSX você passa uma função como manipular de eventos ao invés de um texto.
